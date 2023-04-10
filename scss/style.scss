@@ -1,0 +1,24 @@
+@import '_reset.scss';
+@import '_media.scss';
+//!----- header -----
+//?----------------------------- header ------------------------------------
+.header {
+  border-bottom: 1px solid #CACAD6;
+ 
+  &__container {}
+  &__menu {}
+}
+.menu {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__list {
+    display: flex;
+  }
+  &__item {}
+  &__link {}
+  &__logo {}
+  &__basked {}
+}
+//?----------------------------- header -- end -----------------------------

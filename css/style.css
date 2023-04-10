@@ -1,0 +1,108 @@
+@font-face {
+  font-family: Helvetica;
+  src: url(../fonts/Helvetica.woff2);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Helvetica;
+  src: url(../fonts/helvetica-Bold.woff2);
+  font-style: normal;
+  font-weight: 700;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #5C5C5E;
+}
+
+[class*=__container] {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.ibg {
+  position: relative;
+}
+
+.ibg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+p {
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.header {
+  border-bottom: 1px solid #CACAD6;
+}
+.menu {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__list {
+  display: flex;
+}
