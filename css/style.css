@@ -15,7 +15,6 @@
 *::after {
   padding: 0;
   margin: 0;
-  bottom: 0;
   box-sizing: border-box;
 }
 
@@ -43,6 +42,18 @@ h5,
 h6 {
   font-weight: inherit;
   font-size: inherit;
+}
+
+button {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: inherit;
+  padding: 0;
 }
 
 html,
@@ -89,19 +100,36 @@ body {
      object-fit: cover;
 }
 
+.title-block {
+  flex-basis: 300px;
+  text-transform: uppercase;
+  padding-right: 20px;
+}
+
+.text-block {
+  font-size: 36px;
+  line-height: 113.8888888889%;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
   border-bottom: 1px solid #CACAD6;
   background-color: #fff;
 }
 .menu {
   padding: 18px 0;
   min-height: 80px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-}
-.menu > * {
-  flex: 0 0 33.333%;
 }
 .menu__list {
   padding-right: 9px;
@@ -113,15 +141,17 @@ body {
   line-height: 1;
   overflow: hidden;
 }
-.menu__item a:hover {
-  text-decoration: underline;
+.menu__link {
   text-transform: uppercase;
 }
+.menu__link:hover {
+  text-decoration: underline;
+}
 .menu__logo {
-  text-align: center;
+  justify-self: center;
 }
 .menu__basked {
-  text-align: end;
+  justify-self: end;
   position: relative;
   padding: 0 10px 0 20px;
 }
@@ -142,8 +172,13 @@ body {
   line-height: 0;
 }
 
+.top {
+  min-height: 100vh;
+  position: relative;
+  z-index: 5;
+}
 .top__title {
-  padding: 15vh 0 10px;
+  padding: 25vh 0 10px;
   font-size: 96px;
   line-height: 114.5833333333%;
 }
@@ -170,17 +205,20 @@ body {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
   z-index: -1;
 }
 
 .btn-block {
+  display: flex;
   width: 100%;
   max-width: 600px;
   border: none;
   background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  align-items: center;
 }
 .btn-block > * {
-  display: inline-block;
   line-height: 1;
 }
 .btn-block__text {
@@ -188,12 +226,107 @@ body {
   font-size: 16px;
   color: #F6F4F5;
   padding: 20px;
-  width: 300px;
+  flex: 0 1 50%;
+  text-transform: uppercase;
 }
 .btn-block__prise {
   font-weight: 700;
   font-size: 16px;
   padding: 19px;
   background: #F6F4F5;
-  width: 298px;
+  flex: 0 1 calc(50% - 1px);
+}
+
+.features {
+  padding: 100px 0;
+}
+.features__titles {
+  display: flex;
+  margin-bottom: 20px;
+}
+.features__text {
+  max-width: 330px;
+}
+.tabs {
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+.tabs__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+.tabs__item {
+  font-weight: bold;
+}
+.tabs__item--active {
+  color: #070707;
+}
+.content-tabs {
+  position: relative;
+  min-height: 300px;
+}
+.content-tabs__item {
+  position: absolute;
+  top: 0;
+  left: 200vw;
+  width: 100%;
+  z-index: 50;
+  opacity: 0;
+  display: grid;
+  grid-template-columns: auto 280px;
+  grid-template-rows: auto 150px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.content-tabs__item--active {
+  transition: opacity 0.3s, left 0.3s;
+  left: 0;
+  opacity: 1;
+  display: grid;
+}
+.content-tabs__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  align-self: stretch;
+  grid-row: 1/-1;
+}
+.content-tabs__title {
+  font-size: 24px;
+  line-height: 116.6666666667%;
+  margin-bottom: 10px;
+}
+.content-tabs__text {
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+.content-tabs__video {
+  grid-column: 2/3;
+  position: relative;
+  height: 150px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 10px;
+}
+.content-tabs__video button {
+  border-radius: 50%;
+  margin: 0 0 10px 22px;
+}
+.content-tabs__video span {
+  font-size: 13px;
+  color: #F6F4F5;
+}
+.content-tabs__img-sm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
 }
