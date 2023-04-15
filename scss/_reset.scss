@@ -1,93 +1,116 @@
 @font-face {
-  font-family: Helvetica;
-  src: url(../fonts/Helvetica.woff2);
-  font-style: normal;
-  font-weight: normal;
+  font-family : Helvetica;
+  src         : url(../fonts/Helvetica.woff2);
+  font-style  : normal;
+  font-weight : normal;
 }
+
 @font-face {
-  font-family: Helvetica;
-  src: url(../fonts/helvetica-Bold.woff2);
-  font-style: normal;
-  font-weight: 700;
+  font-family : Helvetica;
+  src         : url(../fonts/helvetica-Bold.woff2);
+  font-style  : normal;
+  font-weight : 700;
 }
+
 //? Обнуление
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
+  padding    : 0;
+  margin     : 0;
   // bottom: 0;
-  box-sizing: border-box;
+  box-sizing : border-box;
 }
+
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration : none;
+  color           : inherit;
 }
+
 ul,
 ol,
 li {
-  list-style: none;
+  list-style : none;
 }
+
 img {
-  vertical-align: top;
-  max-width: 100%;
+  vertical-align : top;
+  max-width      : 100%;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: inherit;
-  font-size: inherit;
+  font-weight : inherit;
+  font-size   : inherit;
 }
-button{
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  font-family: inherit;
-  padding: 0;
+
+button {
+  color            : inherit;
+  font-size        : inherit;
+  line-height      : inherit;
+  background-color : transparent;
+  border           : none;
+  cursor           : pointer;
+  overflow         : hidden;
+  font-family      : inherit;
+  padding          : 0;
 }
+
 html,
 body {
-  height: 100%;
+  height : 100%;
 }
+
+html {
+  scroll-behavior : smooth;
+}
+
 body {
-  font-family: Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #5C5C5E;
+  font-family : Helvetica, sans-serif;
+  font-size   : 16px;
+  font-weight : 400;
+  line-height : 1.4;
+  color       : #5C5C5E;
 }
+
 [class*="__container"] {
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 0 10px;
+  max-width : 1220px;
+  margin    : 0 auto;
+  padding   : 0 10px;
 }
+
 // ! ----------------------------------
 .wrapper {
-  min-height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.main {
-  flex: 1 1 auto;
-}
-//! ----------------------------------
-.ibg {
+  min-height     : 100%;
+  overflow       : hidden;
+  display        : flex;
+  flex-direction : column;
   position: relative;
 }
-.ibg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+
+.main {
+  flex : 1 1 auto;
 }
+
 //! ----------------------------------
+.ibg {
+  position : relative;
+}
+
+.ibg img {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  height     : 100%;
+  width      : 100%;
+  object-fit : cover;
+}
+
+//! ----------------------------------
+.ovh {
+  overflow : hidden;
+}

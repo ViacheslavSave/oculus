@@ -2,50 +2,1113 @@
 //?----------------------------- header -- media ---------------------------
 .header {
   &__container {}
+
   &__menu {}
 }
+
 .menu {
   &__list {}
+
   &__item {}
+
   &__link {}
+
   &__logo {}
+
   &__basked {}
 }
+
+//!------------------  media -- max-width -- 767px  ------------------
+
+@media(max-width:767px) {
+
+  .header {
+    &__container {}
+
+    &__menu {
+      grid-template-columns : 1fr 4fr 1fr;
+      position              : relative;
+
+      >div {
+        height : 25px;
+      }
+    }
+  }
+
+
+  .btn-menu {
+    background-color : rgba(255, 255, 255, 0.5);
+    display          : flex;
+    z-index          : 2;
+    // transition : transform 2s , background-color .3s;
+
+    transition : all .3s;
+
+    &--header {
+      position       : fixed;
+      // top: 100px;
+      // transition : all .3s;
+    }
+
+    &--header.btn-menu--active {
+      //  top : 15vh;
+      // margin-top                : 10vh;
+      //  transform            : translateY(15vh);
+      transform            :  translateY(12vh) rotate(180deg) ;
+      // transform-origin : center;
+    }
+    &--footer.btn-menu--active {
+      //  top : 15vh;
+      // margin-top                : 10vh;
+      //  transform            : translateY(15vh);
+      transform            :   rotate(180deg) ;
+      // transform-origin : center;
+    }
+
+    span {}
+
+    &--active {
+      // transform            :   rotate(180deg) ;
+      // width  : 25px;
+      width            : 35px;
+      height           : 32px;
+      background-color : rgb(155, 28, 240);
+      box-shadow       : 0px 0px 10px 7px rgb(155, 28, 240);
+      border-radius    : 50%;
+      // padding: 5px;padding-left: 7px;
+      padding          : 4px 0px 4px 8px;
+
+
+
+      span {
+        &:nth-child(1) {
+          background          : #bf3fd3;
+          // background-color: inherit;
+
+          transform        : rotate(45deg);
+          transform-origin : top left; // transform-origin : center center;
+          // width: 45px;
+        }
+
+        &:nth-child(2) {
+          background : #bf3fd3;
+
+          width       : 0px;
+          margin-left : 10px;
+
+          opacity : 0;
+        }
+
+        &:nth-child(3) {
+          background       : #bf3fd3;
+          // width: 150%;
+          transform        : rotate(-45deg);
+          transform-origin : bottom left;
+        }
+      }
+    }
+  }
+
+  .header {
+    &__container {}
+
+    &__menu {}
+  }
+
+  .menu {
+    .menu__inb {
+      // transition: all 0.3s;
+      // position: relative;
+      z-index : 1;
+    }
+
+    // .menu__inb--active{transform: translateY(10vh);}
+
+    &__list {
+      position : fixed;
+      top      : 15vh;
+      left     : -100vw;
+
+      z-index : 0;
+      color   : #000;
+
+      visibility : hidden;
+      transition : all .3s;
+
+      width                    : 320px;
+      // height               : 100vh;
+      background               : linear-gradient(180deg, #bf3fd3 0%, rgb(126, 67, 252) 50%);
+      // background-color : rgba(0, 0, 0, 0.274);
+      flex-direction           : column;
+      text-align               : center;
+      padding                  : 50px 0 50px;
+      // overflow-y           : auto;
+
+      opacity : 0;
+
+      &--active {
+        opacity    : 0.8;
+        visibility : visible;
+        left       : 0;
+
+        .menu__item {
+          transform : translateX(0px);
+
+
+        }
+      }
+    }
+
+    &__item {
+
+      color     : #fff;
+      transform : translateX(-100vw);
+
+      &:not(:last-child) {
+        padding-bottom : 20px;
+      }
+
+      &--1 {
+        transition : all 0.3s ease .1s;
+      }
+
+      &--2 {
+        transition : all 0.3s ease .2s;
+      }
+
+      &--3 {
+        transition : all 0.3s ease .3s;
+      }
+    }
+
+    &__link {
+      // width: 100%;
+      // display: inline-block;
+    }
+
+    &__logo {}
+
+    &__basked {}
+  }
+}
+
+
 
 //?----------------------------- header    -- end -----------------------------
 //!----- top -----
 //?----------------------------- top -- media ---------------------------
 .top {
   &__container {}
+
   &__title {}
+
   &__subtitle {}
+
   &__text {}
+
   &__bg {}
 }
+
+//!------------------  media -- max-width -- 768px  ------------------
+@media(max-width:768px) {
+  .top {
+    &__container {}
+
+    &__title {
+      // 198
+      // padding-top: calc(5vh + 20  * ((100vh - 320px) / (768 - 320)));
+      font-size : calc(48px + 48 * ((100vw - 320px) / (768 - 320)));
+    }
+
+    &__subtitle {
+      font-size : calc(25px + 11 * ((100vw - 320px) / (768 - 320)));
+    }
+
+    &__text {
+      font-size     : calc(10px + 3 * ((100vw - 320px) / (768 - 320)));
+      margin-bottom : calc(20px + 30 * ((100vw - 320px) / (768 - 320)));
+    }
+
+    &__bg {}
+  }
+
+}
+
+//!------------------  media -- max-width -- 480px  ------------------
+@media(max-width:480px) {
+  .top {
+
+    text-align : center;
+
+    &__container {}
+
+    &__title {}
+
+    &__subtitle {}
+
+    &__text {}
+
+    &__bg {}
+
+    &__btn {
+      margin : 0 auto 10px;
+    }
+  }
+
+
+
+
+  .btn-block {
+
+    flex-direction : column;
+    width          : 300px;
+
+    >* {
+      // flex : 0 0 100%;
+      // width      : 100%;
+    }
+  }
+}
+
 
 //?----------------------------- top -- end -----------------------------
 //!----- features -----
 //?----------------------------- features -- media ---------------------------
 .features {
   &__container {}
+
   &__titles {}
+
   &__title {}
+
   &__text {}
+
   &__tabs {}
 }
+
 .tabs {
   &__btn {}
+
   &__item {}
+
   &__content {}
 }
+
 .content-tabs {
   &__item {}
+
   &__img {}
+
   &__content {}
+
   &__title {}
+
   &__text {}
+
   &__video {}
+
   &__img-sm {}
 }
 
+//!------------------  media -- max-width -- 1024px  ------------------
+@media(max-width:1024px) {
+  .features {
+    &__container {}
+
+    &__titles {}
+
+    &__title {}
+
+    &__text {}
+
+    &__tabs {
+      display : block;
+    }
+  }
+
+  .tabs {
+    &__btn {
+      flex-direction     : row;
+      // align-items    : stretch;
+
+      margin-bottom : 30px;
+
+
+      // row-gap        : 20px;
+      // flex: 0 1 33.333%;
+      flex-wrap : wrap;
+    }
+
+    &__item {
+      flex         : 0 1 33.333%;
+      text-align   : left;
+      padding-left : 50px;
+
+    }
+
+    &__content {}
+  }
+
+  .content-tabs {
+
+    // width: 90%;
+    // margin: 0 auto;
+    &__item {
+      column-gap : 20px;
+    }
+
+    &__img {}
+
+    &__content {}
+
+    &__title {}
+
+    &__text {}
+
+    &__video {}
+
+    &__img-sm {}
+  }
+
+}
+
+//!------------------  media -- max-width -- 768px  ------------------
+@media(max-width:768px) {
+  .features {
+    padding : 50px 0 25px;
+
+    &__container {}
+
+    &__titles {
+      // margin: 0 auto;
+      display : block;
+    }
+
+    &__title {
+      margin-bottom : 20px;
+    }
+
+    &__text {
+      margin : 0 auto;
+    }
+
+    &__tabs {}
+  }
+
+  .tabs {
+    &__btn {}
+
+    &__item {
+      flex : 0 1 50%;
+    }
+
+    &__content {}
+  }
+
+  .content-tabs {
+
+
+    &__item {
+
+
+      &--active {
+        display                   : block;
+        // grid-template-columns : repeat(2,1fr);
+        // grid-template-rows    : auto 200px;
+        row-gap                   : 30px;
+      }
+    }
+
+    &__img {
+      // grid-column : 1/-1;
+      margin-bottom : 30px;
+    }
+
+    &__content {}
+
+    &__title {}
+
+    &__text {
+      margin-bottom : 20px;
+    }
+
+    &__video {
+      // align-self : end; 
+      // height : 53%;
+      padding-top : 53%;
+      width       : 100%;
+
+    }
+
+    &__btn-inner {
+      // position       : absolute;
+      // bottom         : 0;
+      // left           : 10px;
+      // z-index        : 5;
+      // display        : flex;
+      // flex-direction : column;
+    }
+
+    // &__btn { margin           : 0 0 10px 22px;}
+    &__btn {
+      // margin : 0;
+    }
+
+    &__img-sm {}
+  }
+
+}
+
+
+//!------------------  media -- max-width -- 480px  ------------------
+@media(max-width:480px) {
+  .features {
+    &__container {}
+
+    &__titles {}
+
+    &__title {}
+
+    &__text {
+      font-size  : 32px;
+      text-align : center;
+    }
+
+    &__tabs {}
+  }
+
+  .tabs {
+    &__btn {}
+
+    &__item {
+      flex         : 0 1 100%;
+      text-align   : center;
+      padding-left : 0px;
+    }
+
+    &__content {}
+  }
+
+}
+
 //?----------------------------- features -- end -----------------------------
+//!----- games -----
+//?----------------------------- games -- media ---------------------------
+.games {
+  &__container {}
+
+  &__title {}
+
+  &__inner {}
+
+  &__descr {}
+
+  &__item {}
+}
+
+.title-block {}
+
+.descr-games {
+  &__title {}
+
+  &__text {}
+
+  &__link {}
+}
+
+.text-block {}
+
+.item-games {
+  &__img {}
+
+  &__title {}
+
+  &__text {}
+
+  &__link {}
+}
+
+//!------------------  media -- max-width -- 1024px  ------------------
+@media(max-width:1024px) {
+  .games {
+    &__container {}
+
+    &__title {}
+
+    &__inner {
+      grid-template-columns : repeat(2, 1fr);
+      gap                   : 20px;
+    }
+
+    &__descr {}
+
+    &__item {}
+  }
+
+
+
+  .descr-games {
+    &__title {}
+
+    &__text {}
+
+    &__link {}
+  }
+
+
+
+  .item-games {
+    &__img {}
+
+    &__title {}
+
+    &__text {}
+
+    &__link {}
+  }
+
+}
+
+//!------------------  media -- max-width -- 678px  ------------------
+@media(max-width:678px) {
+  .games {
+    padding : 25px 0 25px;
+
+    &__container {}
+
+    &__title {}
+
+    &__inner {
+      grid-template-columns : repeat(1, 1fr);
+      gap                   : 20px;
+    }
+
+    &__descr {}
+
+    &__item {}
+  }
+
+
+
+  .descr-games {
+    &__title {}
+
+    &__text {}
+
+    &__link {}
+  }
+
+
+
+  .item-games {
+    &__img {}
+
+    &__title {}
+
+    &__text {}
+
+    &__link {}
+  }
+}
+
+
+//?----------------------------- games -- end -----------------------------
+//!----- buy -----
+//?----------------------------- buy -- media ---------------------------
+.buy {
+  &__container {}
+
+  &__bg {}
+
+  &__img {}
+
+  &__btn {}
+
+  &__text {}
+}
+
+.btn-block {
+  &__text {}
+
+  &__prise {}
+}
+
+//?----------------------------- buy -- end -----------------------------
+//!----- equipment -----
+//?----------------------------- equipment -- media ---------------------------
+.equipment {
+  &__container {}
+
+  &__title {}
+
+  &__box {}
+}
+
+
+
+.box-equipment {
+
+  &__item {}
+
+  &__img {}
+
+  &__text {}
+
+  &__label {}
+}
+
+//!------------------  media -- max-width -- 820px  ------------------
+@media(max-width:820px) {
+  .equipment {
+    &__container {}
+
+    &__title {}
+
+    &__box {}
+  }
+
+
+
+  .box-equipment {
+    grid-template-columns : repeat(3, 1fr);
+
+    &__item {}
+
+    &__img {}
+
+    &__text {}
+
+    &__label {}
+  }
+}
+
+//!------------------  media -- max-width -- 568px  ------------------
+@media(max-width:568px) {
+  .equipment {
+    &__container {}
+
+    &__title {}
+
+    &__box {}
+  }
+
+
+
+  .box-equipment {
+    display : block;
+
+    &__item {}
+
+    &__img {
+      width : 100%;
+    }
+
+    &__text {
+      margin-bottom : 20px;
+    }
+
+    &__label {
+      margin-bottom : 20px;
+    }
+  }
+}
+
+
+
+//?----------------------------- equipment -- end -----------------------------
+//!----- promo -----
+//?----------------------------- promo -- media ---------------------------
+.promo {
+  &__container {}
+
+  &__video {}
+
+  &__dtn {}
+}
+
+//!------------------  media -- max-width -- 1024px  ------------------
+@media(max-width:1024px) {
+  .promo {
+    margin : 0 -10px;
+
+    &__container {}
+
+    &__video {}
+
+    &__dtn {}
+  }
+}
+
+//  820
+//  568
+
+//?----------------------------- promo -- end -----------------------------
+//!----- accessories -----
+//?----------------------------- accessories -- media ---------------------------
+.accessories {
+  &__container {}
+
+  &__title {}
+
+  &__text {}
+
+  &__items {}
+
+  &__item {}
+}
+
+.title-block {}
+
+.text-block {}
+
+.item-accessories {
+  &__card {}
+
+  &__img {}
+
+  &__title {}
+
+  &__text {}
+
+  &__prise {}
+
+  &__btn {}
+}
+
+//!------------------  media -- max-width -- 992px  ------------------
+@media(max-width:992px) {
+  .accessories {
+    &__container {}
+
+    &__title {}
+
+    &__text {}
+
+    &__items {
+      grid-template-columns : repeat(2, 1fr);
+      gap                   : 20px;
+    }
+
+    &__item {}
+  }
+
+
+
+  .item-accessories {
+
+    &__card {}
+
+    &__img {}
+
+    &__title {}
+
+    &__text {}
+
+    &__prise {}
+
+    &__btn {}
+  }
+
+}
+
+//!------------------  media -- max-width -- 568px  ------------------
+@media(max-width:568px) {
+  .accessories {
+    padding : 25px 0 25px;
+
+    &__container {}
+
+    &__title {}
+
+    &__text {}
+
+    &__items {
+      grid-template-columns : repeat(1, 1fr);
+      margin                : 0 -5px;
+    }
+
+    &__item {}
+  }
+
+
+  .item-accessories {
+    &__card {}
+
+    &__img {}
+
+    &__title {}
+
+    &__text {}
+
+    &__prise {}
+
+    &__btn {}
+  }
+
+}
+
+//  820
+//  568
+
+
+//?----------------------------- accessories -- end -----------------------------
+//!----- contacts -----
+//?----------------------------- contacts -- media ---------------------------
+.contacts {
+  &__container {}
+
+  &__title {}
+
+  &__form {}
+
+  &__box {}
+
+  &__content {}
+
+  &__text {}
+
+  &__policy {}
+
+  &__mail {}
+}
+
+.form {
+  &__text {}
+
+  &__btn {}
+}
+
+//!------------------  media -- max-width -- 1024px  ------------------
+@media(max-width:1024px) {
+  .contacts {
+    &__container {}
+
+    &__title {}
+
+    &__form {}
+
+    &__box {
+      // display: block;
+    }
+
+    &__content {
+      flex          : 0 1 auto;
+      padding-right : 100px;
+    }
+
+    &__text {}
+
+    &__policy {}
+
+    &__mail {}
+  }
+
+  .form {
+    &__text {}
+
+    &__btn {}
+  }
+}
+
+//!------------------  media -- max-width -- 768px  ------------------
+@media(max-width:768px) {
+  .contacts {
+    &__container {}
+
+    &__title {}
+
+    &__form {}
+
+    &__box {
+      display : block;
+    }
+
+    &__content {
+      // flex : 0 1 auto
+    }
+
+    &__text {}
+
+    &__policy {}
+
+    &__mail {}
+  }
+}
+
+//!------------------  media -- max-width -- 568px  ------------------
+@media(max-width:568px) {
+  .contacts {
+    padding : 25px 0 25px;
+
+    &__container {}
+
+    &__title {}
+
+    &__form {}
+
+    &__box {}
+
+    &__content {
+      padding-right : 0px;
+    }
+
+    &__text {}
+
+    &__policy {}
+
+    &__mail {}
+  }
+}
+
+//  820
+//  568
+//?----------------------------- contacts -- end -----------------------------
+//!----- footer -----
+//?----------------------------- footer -- media ---------------------------
+.footer {
+  &__container {}
+
+  &__menu {}
+}
+
+.menu {
+  &__list {}
+
+  &__item {}
+
+  &__link {}
+
+  &__logo {}
+
+  &__social {}
+}
+
+.social-menu {
+  &__item {}
+
+  &__link {}
+
+  &__img {}
+}
+
+//!------------------  media -- max-width -- 767px  ------------------
+@media(max-width:767px) {
+  .footer {
+    margin : 25px 0 20px;
+
+
+    &__container {}
+
+    &__menu {
+      grid-template-columns : 1fr 4fr 3fr;
+
+      >div {
+        height : 25px;
+
+        position : relative;
+      }
+    }
+  }
+
+  .menu {
+    &__list {}
+
+    &__item {}
+
+    &__link {}
+
+    &__logo {}
+
+    &__social {}
+
+    &__btn {}
+  }
+
+  .btn-menu__footer {}
+
+  .btn-menu--active.btn-menu--footer {
+    opacity    : 0;
+    visibility : hidden;
+
+  }
+
+  .btn-menu__footer {}
+
+  .social-menu {
+    padding-left : 10px;
+    position     : relative;
+    z-index      : 10;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right : 10px;
+
+      }
+    }
+
+    &__link {}
+
+    &__img {}
+  }
+
+
+}
+
+//!------------------  media -- max-width -- 480px  ------------------
+@media(max-width:480px) {
+  .footer {
+    &__container {}
+
+    &__menu {}
+  }
+
+  .footer__menu.menu {
+    grid-template-columns : 1fr 4fr;
+    grid-template-rows    : repeat(2, 1fr);
+    row-gap               : 20px;
+  }
+
+  .menu {
+    &__btn {}
+
+    &__list {
+      // display: none;
+    }
+
+    &__item {}
+
+    &__link {}
+
+    &__logo {}
+
+    &__social {
+      grid-column  : 1/3;
+      justify-self : center;
+    }
+  }
+
+  .btn-menu {
+
+
+    &__footer {
+
+      margin : 0 auto;
+
+    }
+  }
+
+  .social-menu {
+    padding : 0;
+
+    &__item {}
+
+    &__link {}
+
+    &__img {}
+  }
+
+
+}
+
+
+//?----------------------------- footer -- end -----------------------------
